@@ -1,0 +1,14 @@
+{
+  "name": "typescript-slides",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Matthew Gerstman <matthew.gerstman@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "mdx-deck": "^2.2.1"
+  },
+  "scripts": {
+    "start": "mdx-deck deck.mdx"
+  }
+}
