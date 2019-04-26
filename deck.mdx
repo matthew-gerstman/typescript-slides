@@ -1,89 +1,238 @@
+import AboutMe from './src/about-me';
+import {Appear, Image, Notes} from 'mdx-deck';
+import {TwitterTweetEmbed} from 'react-twitter-embed';
+import {CodeSurfer} from 'mdx-deck-code-surfer';
+import TallImage from './src/tall-image';
+
 # TypeScript: Seeing Past The Hype
 
 ---
 
-https://twitter.com/AndrewDelPrete/status/1081778805956476928?s=20
-https://twitter.com/GayaKessler/status/1081686244399214595?s=20
-https://twitter.com/tosbourn/status/1085844393549094912?s=20
-https://twitter.com/sekanet/status/1079296773087285249?s=20
-https://twitter.com/wongmjane/status/1089069531513802755?s=20
+## <AboutMe />
 
 ---
-https://dev.to/nickytonline/is-2019-the-year-of-typescript-18p2
-https://medium.com/@jtomaszewski/why-typescript-is-the-best-way-to-write-front-end-in-2019-feb855f9b164
-https://www.quora.com/Should-I-learn-TypeScript-for-2019
----
-https://www.reddit.com/r/reactjs/comments/abtrxy/everything_i_write_in_2019_will_be_in_typescript/
----
-https://trends.google.com/trends/explore?date=today%205-y&q=typescript
+
+<TwitterTweetEmbed tweetId="1081778805956476928" />
 
 ---
-# Matthew's Law: For any amount of hype on the internet there will be an equal amount of anti-hype.
+
+<TwitterTweetEmbed tweetId="1081686244399214595" />
+
 ---
-https://twitter.com/MatthewGerstman/status/1087928519592722432?s=20
-https://news.ycombinator.com/item?id=18975373
+
+<TwitterTweetEmbed tweetId="1085844393549094912" />
+
 ---
-hn-1
-hn-2
-hn-3
+
+<TwitterTweetEmbed tweetId="1079296773087285249" />
+
 ---
-Ten Steps Back: What is TypeScript?
+
+<TwitterTweetEmbed tweetId="1089069531513802755" />
+
 ---
-Strict superset of JavaScript
+
+<img style={{height: 300, margin: 20}} src="assets/dev-to.png" />
+
+<img style={{height: 300, margin: 20}} src="assets/medium.png" />
+
+<img style={{height: 300, margin: 20}} src="assets/quora.png" />
+<img style={{height: 300, margin: 20}} src="assets/reddit.png" />
+
 ---
-It looks like this
-Code Here
+
+<img style={{width: '80vw'}} src="assets/trends.png" />
+
 ---
-It's smart, really smart.
+
+## Dropbox has been using TS for a while
+
 ---
-Example with a function that returns different things based on a string
+
+## Use TS to scale eng org
+
 ---
-It's theoretically, incremental, and opt in.
+
+## Ten Steps Back: What is TypeScript?
+
 ---
-https://twitter.com/wSokra/status/1019923484028399621?s=20
-https://twitter.com/samccone/status/1118223944983519233?s=20
-https://twitter.com/shuheikagawa/status/1118172481632780288?s=20
-https://twitter.com/dbsleak/status/948284542414180354?s=20
+
+## Strict superset of JavaScript
+
 ---
+
+<CodeSurfer
+  code={require('!raw-loader!./snippets/what-is.ts').default}
+  lang="typescript"
+  showNumbers={true}
+  dark={true}
+  steps={[{}, {tokens: {1: [2, 3, 4, 5], 2: [3, 4, 5], 4: [6, 7, 8]}}]}
+/>
+
+---
+
+## It's smart, really smart.
+
+---
+
+<CodeSurfer
+  code={require('!raw-loader!./snippets/get-element.ts').default}
+  lang="typescript"
+  showNumbers={false}
+  dark={true}
+/>
+---
+<CodeSurfer
+  code={require('!raw-loader!./snippets/string.ts').default}
+  lang="typescript"
+  showNumbers={false}
+  dark={true}
+/>
+
+---
+
+# It makes big refactors easy
+
+---
+
+<TallImage src="assets/refactor.gif" />
+
+---
+
+## It's *theoretically* incremental, and opt in.
+---
+<TallImage src="assets/incremental2.gif" />
+---
+<TallImage src="assets/theoretically.gif" />
+
+---
+
 # yarn add @types/react
+
 ---
+
 # The second you add React TypeScript is no longer incremental
+
 ---
+
 # Why?
+
 ---
+
 # Render Props
+
 ---
+
 # HOCs
+
 ---
+
 # Function Components
+
 ---
+
 # Writing Tests
+
 ---
+
 # You either need robust mock data, lots of anys, or you're going to be updating types a lot.
+
 ---
+
 # We're bolting on types to an untyped language
+
 ---
+
 # You're going to need to learn advanced TypeScript features faster than you realize
+
 ---
+
 # All of this is still worth it.
+
 ---
+
 # I wager that TypeScript always ends up being a better decision over time
-Graph up and to the right, show a line where its more hassle than not
+
 ---
-# Graph As your team scales
+
+# Free Documentation\*
+
 ---
+
+# Free Tests\*
+
+---
+
 # Graph As your number of lines of code grows
+
 ---
-# Graph As time goes on and you forget how something works
+
+# 2 Million Lines of TypeScript
+
+<Notes>
+  Dropbox.com little over a million. paper a little under a million.
+</Notes>
+
 ---
-# Graph As your requirements change
+
+# Graph As your team scales
+
 ---
-# Graph Refactoring is trivial
+
+# Dropbox has 200+ engineers working on our TypeScript codebase
+
 ---
+
+# They're spread across NY, SF, SEA, TLV
+
+---
+
+File Viewer -> NYC
+Home -> SF
+Browse -> SEA
 
 ---
 
 ---
+
+---
+
+# types.ts
+
+---
+
+## screenshot of data directory
+
+# redux root types
+
+---
+
+This helps deal with indirection
+
+---
+
+Clicking on things gif
+
+---
+
+get good at reading error messages
+
+---
+
+Some JS patterns are no longer relevant != null
+
+---
+
+Some things still can't be typed
+
+---
+
+# Generics
+
+---
+
+---
+
 - Scaling an engineering organization
   - Building contracts with Types
   - Allow 200+ engineers to play in the same codebase
@@ -100,3 +249,18 @@ Graph up and to the right, show a line where its more hassle than not
   - too many optional props
   - Not linting for any
 - Show off what refactoring looks like
+
+# Matthew's Law: For any amount of hype on the internet there will be an equal amount of anti-hype.
+
+---
+
+https://twitter.com/MatthewGerstman/status/1087928519592722432?s=20
+https://news.ycombinator.com/item?id=18975373
+
+---
+
+hn-1
+hn-2
+hn-3
+
+---
