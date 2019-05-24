@@ -13,7 +13,7 @@ export default {
     background: '#0a0b0f',
     link: 'white',
   },
-  a: { color: 'white', textDecoration: 'none' },
+  a: {color: 'white', textDecoration: 'none'},
   h1: {
     textTransform: 'uppercase',
   },

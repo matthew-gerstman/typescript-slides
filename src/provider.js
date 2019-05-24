@@ -1,8 +1,8 @@
-import React, { Fragment, Component } from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
-import { modes } from 'mdx-deck/dist/constants';
+import React, {Fragment, Component} from 'react';
+import styled, {createGlobalStyle} from 'styled-components';
+import {modes} from 'mdx-deck/dist/constants';
 import Footer from './footer';
-import { lightBlue } from './colors';
+import {lightBlue} from './colors';
 
 const footerHeight = '80px';
 
@@ -51,10 +51,15 @@ const Bar = styled.div`
 
 export default class Provider extends React.Component {
   render() {
-    const { children, mode, index, length, update } = this.props;
+    const {children, mode, index, length, update} = this.props;
 
     if (mode !== modes.normal) {
-      return <Fragment>{children}</Fragment>;
+      return (
+        <Fragment>
+          <GlobalStyle />
+          {children}
+        </Fragment>
+      );
     }
 
     return (

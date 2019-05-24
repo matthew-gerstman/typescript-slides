@@ -4,14 +4,13 @@ import {Appear, Image, Notes} from 'mdx-deck';
 import {CodeSurfer} from 'mdx-deck-code-surfer';
 import TallImage from './src/tall-image';
 import {TwitterTweetEmbed} from 'react-twitter-embed';
-
-
+import {AppearList} from './src/appear-list';
 
 # TypeScript: Seeing Past The Hype
 
 ---
 
-## <AboutMe />
+<AboutMe />
 
 ---
 
@@ -35,24 +34,27 @@ import {TwitterTweetEmbed} from 'react-twitter-embed';
 
 ---
 
-<img style={{height: 300, margin: 20}} src="assets/dev-to.png" />
-
-<img style={{height: 300, margin: 20}} src="assets/medium.png" />
-
-<img style={{height: 300, margin: 20}} src="assets/quora.png" />
-<img style={{height: 300, margin: 20}} src="assets/reddit.png" />
+<div style={{display: 'grid',  "gridTemplateColumns": "1fr 1fr",  gridGap: 15, alignItems: 'center'}}>
+  <img style={{maxHeight: 600, maxWidth: 600}} src="assets/quora.png" />
+  <img style={{maxHeight: 600, maxWidth: 600}} src="assets/reddit.png" />
+  <img style={{maxHeight: 600, maxWidth: 600}} src="assets/medium.png" />
+  <img style={{maxHeight: 600, maxWidth: 600}} src="assets/dev-to.png" />
+</div>
 
 ---
+## Google Trend
 
 <img style={{width: '80vw'}} src="assets/trends.png" />
 
 ---
 
-## Dropbox has been using TS for a while
+# Today We're Going To Get Past The Hype
+<AppearList>
+  <li>What is TypeScript?</li>
+  <li>What are the wins?</li>
+  <li>I'm gonna show you some super cool types.</li>
+</AppearList>
 
----
-
-## Use TS to scale eng org
 
 ---
 
@@ -83,13 +85,7 @@ import {TwitterTweetEmbed} from 'react-twitter-embed';
   lang="typescript"
   showNumbers={false}
   dark={true}
-/>
----
-<CodeSurfer
-  code={require('!raw-loader!./snippets/string.ts').default}
-  lang="typescript"
-  showNumbers={false}
-  dark={true}
+  steps={[{}]}
 />
 
 ---
@@ -107,54 +103,110 @@ import {TwitterTweetEmbed} from 'react-twitter-embed';
 <TallImage src="assets/incremental2.gif" />
 ---
 <TallImage src="assets/theoretically.gif" />
+---
+
+# Tradeoff: You're going to need to learn advanced TypeScript features faster than you realize
 
 ---
 
-# yarn add @types/react
+# React Makes This Even Worse
+
+---
+<CodeSurfer
+  title="Function Components"
+  code={require('!raw-loader!./snippets/function-component.js').default}
+  lang="javascript"
+  showNumbers={false}
+  dark={true}
+  steps={[{}]}
+/>
+
+---
+<CodeSurfer
+  title="Function Components"
+  code={require('!raw-loader!./snippets/function-component.tsx').default}
+  lang="javascript"
+  showNumbers={false}
+  dark={true}
+  steps={[{}]}
+/>
+
+---
+<CodeSurfer
+  title="Render Props"
+  code={require('!raw-loader!./snippets/render-prop.js').default}
+  lang="javascript"
+  showNumbers={false}
+  dark={true}
+  steps={[{}]}
+/>
+
+---
+<CodeSurfer
+  title="Render Props"
+  code={require('!raw-loader!./snippets/render-prop.tsx').default}
+  lang="javascript"
+  showNumbers={false}
+  dark={true}
+  steps={[{}]}
+/>
 
 ---
 
-# The second you add React TypeScript is no longer incremental
+<CodeSurfer
+  title="HOCs"
+  code={require('!raw-loader!./snippets/hoc.js').default}
+  lang="javascript"
+  showNumbers={false}
+  dark={true}
+  steps={[{}]}
+/>
 
 ---
+<CodeSurfer
+  title="HOCs"
+  code={require('!raw-loader!./snippets/hoc.tsx').default}
+  lang="javascript"
+  showNumbers={false}
+  dark={true}
+  steps={[{}]}
+/>
 
-# Why?
-
----
-
-# Render Props
-
----
-
-# HOCs
-
----
-
-# Function Components
 
 ---
 
 # Writing Tests
+<img src="assets/tests.png" />
 
 ---
 
 # You either need robust mock data, lots of anys, or you're going to be updating types a lot.
 
 ---
+# Long Tail
+<AppearList>
+<li> != null </li>
+<li> lodash get/set </li>
 
-# We're bolting on types to an untyped language
+</AppearList>
 
 ---
-
-# You're going to need to learn advanced TypeScript features faster than you realize
+# We're bolting on types to an untyped language
 
 ---
 
 # All of this is still worth it.
 
----
 
-# I wager that TypeScript always ends up being a better decision over time
+---
+# Dropbox Scale
+
+---
+<AppearList>
+		<li>👩‍💻 200+ engineers working on the same codebase</li>
+		<li>📚 Hundreds of Features</li>
+		<li>🌎 NY, SEA, SF, TLV</li>
+</AppearList>
 
 ---
 
