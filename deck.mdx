@@ -1,10 +1,11 @@
-export { default as theme } from './src/theme'
+export {default as theme} from './src/theme';
 import AboutMe from './src/about-me';
 import {Appear, Image, Notes} from 'mdx-deck';
 import {CodeSurfer} from 'mdx-deck-code-surfer';
 import TallImage from './src/tall-image';
 import {TwitterTweetEmbed} from 'react-twitter-embed';
 import {AppearList} from './src/appear-list';
+import {NotesList} from './src/notes-list';
 
 # TypeScript: Seeing Past The Hype
 
@@ -34,7 +35,14 @@ import {AppearList} from './src/appear-list';
 
 ---
 
-<div style={{display: 'grid',  "gridTemplateColumns": "1fr 1fr",  gridGap: 15, alignItems: 'center'}}>
+<div
+  style={{
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gridGap: 15,
+    alignItems: 'center',
+  }}
+>
   <img style={{maxHeight: 600, maxWidth: 600}} src="assets/quora.png" />
   <img style={{maxHeight: 600, maxWidth: 600}} src="assets/reddit.png" />
   <img style={{maxHeight: 600, maxWidth: 600}} src="assets/medium.png" />
@@ -42,6 +50,7 @@ import {AppearList} from './src/appear-list';
 </div>
 
 ---
+
 ## Google Trend
 
 <img style={{width: '80vw'}} src="assets/trends.png" />
@@ -49,20 +58,62 @@ import {AppearList} from './src/appear-list';
 ---
 
 # Today We're Going To Get Past The Hype
+
 <AppearList>
   <li>What is TypeScript?</li>
   <li>What are the wins?</li>
   <li>I'm gonna show you some super cool types.</li>
 </AppearList>
 
+---
+
+# Let's take 10 steps back
 
 ---
 
-## Ten Steps Back: What is TypeScript?
+# What is a type?
 
 ---
 
-## Strict superset of JavaScript
+# A type is an attribute of data that tells the computer how to the programmer intends to use it.
+
+---
+
+# Basic Types
+
+<AppearList>
+  <li>boolean</li>
+  <li>number</li>
+  <li>string</li>
+  <li>array</li>
+  <li>object</li>
+  <li>enum</li>
+</AppearList>
+
+---
+
+# Less Basic Types
+
+<AppearList>
+  <li>null</li>
+  <li>undefined</li>
+  <li>never</li>
+  <li>void</li>
+</AppearList>
+
+---
+
+# Types can also be derived from other types
+
+<Appear>But we'll come back to that</Appear>
+
+---
+
+# What is TypeScript?
+
+---
+
+# Strict superset of JavaScript
 
 ---
 
@@ -85,7 +136,12 @@ import {AppearList} from './src/appear-list';
   lang="typescript"
   showNumbers={false}
   dark={true}
-  steps={[{}]}
+  steps={[
+    {},
+    {
+      tokens: {2: [0], 3: [8], 6: [0], 7: [8], 10: [0], 11: [8]},
+    },
+  ]}
 />
 
 ---
@@ -98,20 +154,26 @@ import {AppearList} from './src/appear-list';
 
 ---
 
-## It's *theoretically* incremental, and opt in.
----
-<TallImage src="assets/incremental2.gif" />
----
-<TallImage src="assets/theoretically.gif" />
+## It's _theoretically_ incremental, and opt in.
+
 ---
 
-# Tradeoff: You're going to need to learn advanced TypeScript features faster than you realize
+<TallImage src="assets/incremental2.gif" />
+
+---
+
+<TallImage src="assets/theoretically.gif" />
+
+---
+
+# You're going to need to learn advanced TypeScript features faster than you realize
 
 ---
 
 # React Makes This Even Worse
 
 ---
+
 <CodeSurfer
   title="Function Components"
   code={require('!raw-loader!./snippets/function-component.js').default}
@@ -122,16 +184,18 @@ import {AppearList} from './src/appear-list';
 />
 
 ---
+
 <CodeSurfer
   title="Function Components"
   code={require('!raw-loader!./snippets/function-component.tsx').default}
   lang="javascript"
   showNumbers={false}
   dark={true}
-  steps={[{}]}
+  steps={[{}, {range: [15, 20]}]}
 />
 
 ---
+
 <CodeSurfer
   title="Render Props"
   code={require('!raw-loader!./snippets/render-prop.js').default}
@@ -142,6 +206,7 @@ import {AppearList} from './src/appear-list';
 />
 
 ---
+
 <CodeSurfer
   title="Render Props"
   code={require('!raw-loader!./snippets/render-prop.tsx').default}
@@ -163,6 +228,7 @@ import {AppearList} from './src/appear-list';
 />
 
 ---
+
 <CodeSurfer
   title="HOCs"
   code={require('!raw-loader!./snippets/hoc.tsx').default}
@@ -172,10 +238,10 @@ import {AppearList} from './src/appear-list';
   steps={[{}]}
 />
 
-
 ---
 
 # Writing Tests
+
 <img src="assets/tests.png" />
 
 ---
@@ -183,76 +249,55 @@ import {AppearList} from './src/appear-list';
 # You either need robust mock data, lots of anys, or you're going to be updating types a lot.
 
 ---
-# Long Tail
-<AppearList>
-<li> != null </li>
-<li> lodash get/set </li>
 
-</AppearList>
-
----
 # We're bolting on types to an untyped language
 
 ---
 
 # All of this is still worth it.
 
-
 ---
+
 # Dropbox Scale
 
----
 <AppearList>
-		<li>👩‍💻 200+ engineers working on the same codebase</li>
-		<li>📚 Hundreds of Features</li>
-		<li>🌎 NY, SEA, SF, TLV</li>
+  <li>👩‍💻 200+ engineers working on the same codebase</li>
+  <li>📚 2 Million lines of Typescript</li>
+  <li>📘 Hundreds of Features</li>
+  <li>🌎 NY, SEA, SF, TLV</li>
 </AppearList>
 
 ---
 
-# Free Documentation\*
+# Typescript is a core part of our frntend workflow
 
 ---
 
-# Free Tests\*
+# Free Documentation
 
 ---
 
-# Graph As your number of lines of code grows
+# <s>Free Documentation</s>
 
 ---
 
-# 2 Million Lines of TypeScript
-
-<Notes>
-  Dropbox.com little over a million. paper a little under a million.
-</Notes>
+# Free Tests
 
 ---
 
-# Graph As your team scales
+# <s>Free Tests</s>
 
 ---
 
-# Dropbox has 200+ engineers working on our TypeScript codebase
+# Contract Validation
 
----
-
-# They're spread across NY, SF, SEA, TLV
-
----
-
-File Viewer -> NYC
-Home -> SF
-Browse -> SEA
-
----
-
----
-
----
-
-# types.ts
+<ul>
+  <li>API</li>
+  <li>Data Layer</li>
+  <li>Selectors</li>
+  <li>Connected Components</li>
+  <li>View Components</li>
+</ul>
 
 ---
 
@@ -309,6 +354,7 @@ Some things still can't be typed
 
 ---
 
+https://en.wikipedia.org/wiki/Data_type
 https://twitter.com/MatthewGerstman/status/1087928519592722432?s=20
 https://news.ycombinator.com/item?id=18975373
 
