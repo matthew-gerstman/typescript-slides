@@ -44,7 +44,7 @@ export default function AboutMe() {
           <EmojiWrapper size="40px" marginRight="30px">
             📊
           </EmojiWrapper>
-          <a href="https://slides.slytherin.dev">slides.slytherin.dev</a>
+          <a href="https://typescript.matthewgerstman.com">typescript.matthewgerstman.com</a>
         </CenteredLi>
       </ul>
     </React.Fragment>

@@ -39,7 +39,7 @@ export default ({children, height}) => (
       <EmojiWrapper size="1.5em" marginRight="10px">
         📒
       </EmojiWrapper>
-      <a href="https://slides.slyterin.dev">slides.slytherin.dev</a>
+      <a href="https://slides.slyterin.dev">typescript.matthewgerstman.com</a>
     </AlignedDiv>
 
     <AlignedDiv>
