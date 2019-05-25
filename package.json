@@ -16,6 +16,7 @@
     "mdx-deck": "^1.10.0"
   },
   "scripts": {
-    "start": "mdx-deck deck.mdx"
+    "start": "mdx-deck deck.mdx",
+    "build": "mdx-deck build --no-html deck.mdx && cp -R assets/ dist/assets"
   }
 }
