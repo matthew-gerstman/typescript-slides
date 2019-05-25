@@ -17,10 +17,7 @@ type StoreShape = {
     [userId: number]: User;
   };
 };
-function getNameForUser(
-  state: StoreShape,
-  userId: number
-): string;
+function getNameForUser(state: StoreShape, userId: number): string;
 
 // View Layer
 type UserProps = {

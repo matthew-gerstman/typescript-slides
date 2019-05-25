@@ -109,6 +109,10 @@ import {NotesList} from './src/notes-list';
 
 ---
 
+# Any
+
+---
+
 # What is TypeScript?
 
 ---
@@ -295,6 +299,12 @@ import {NotesList} from './src/notes-list';
 
 ---
 
+# Contract
+
+<Notes>Contract definition</Notes>
+
+---
+
 # Api
 
 <img style={{height: '50vh'}} src="assets/api.svg" />
@@ -419,7 +429,26 @@ import {NotesList} from './src/notes-list';
   lang="javascript"
   showNumbers={false}
   dark={true}
-  steps={[{}, {range: [15, 20]}]}
+  steps={[
+    {},
+    // Parent
+    {range: [3, 7]},
+    {
+      // type Props
+      lines: [3],
+      tokens: {
+        // props: Props
+        5: [5, 6, 7],
+        // {children} = props
+        6: [6, 10],
+      },
+    },
+    // ProperlyTypedParent
+    {range: [10, 15]},
+    {tokens: {10: [4, 5, 6, 7, 8, 9]}},
+    {tokens: {10: [4, 5, 6, 7, 9]}},
+    {tokens: {10: [8]}},
+  ]}
 />
 
 ---

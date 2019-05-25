@@ -1,20 +1,22 @@
 import React from "react";
 
-type ParentProps = {className: string};
+type Props = {className: string};
 
-export function BadParent(props: ParentProps) {
+function PoorlyTypedParent(props: Props) {
   const {className, children} = props;
   return <div className={className}>{children}</div>;
 }
 
-export const BadParent2 = (props: ParentProps) => {
+const ProperlyTypedParent: React.FunctionComponent<Props> = props => {
   const {className, children} = props;
   return <div className={className}>{children}</div>;
 };
 
-export const GoodParent: React.FunctionComponent<
-  ParentProps
-> = props => {
-  const {className, children} = props;
-  return <div className={className}>{children}</div>;
-};
+type SimpleFunctionComponent<P> = P & {
+  children: React.ReactNode;
+}
+
+type FinalPropTypes = {
+  className: string;
+  children: React.ReactNode
+}
