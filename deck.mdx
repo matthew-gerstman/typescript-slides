@@ -291,77 +291,182 @@ import {NotesList} from './src/notes-list';
 
 # Contract Validation
 
-<ul>
-  <li>API</li>
-  <li>Data Layer</li>
-  <li>Selectors</li>
-  <li>Connected Components</li>
-  <li>View Components</li>
-</ul>
+<img src="assets/contracts.svg" />
 
 ---
 
-## screenshot of data directory
+# Api
 
-# redux root types
+<img style={{height: '50vh'}} src="assets/api.svg" />
 
----
-
-This helps deal with indirection
+<Notes>Types auto generated via stone</Notes>
 
 ---
 
-Clicking on things gif
+# Component Library
+
+<img style={{height: '50vh'}} src="assets/component-library.svg" />
+
+<Notes>
+  Types generated at build time so when we upgrade Dropbox.com we already know
+  whats going to break
+</Notes>
 
 ---
 
-get good at reading error messages
+# Feature
+
+<img style={{height: '50vh'}} src="assets/business-logic.svg" />
+
+<Notes>In between, we can develop the feature on it's own</Notes>
 
 ---
 
-Some JS patterns are no longer relevant != null
+<CodeSurfer
+  title="Sample App"
+  code={require('!raw-loader!./snippets/sample-app.tsx').default}
+  lang="javascript"
+  showNumbers={false}
+  dark={true}
+  steps={[
+    {},
+    // Api
+    {range: [0, 6]},
+    {range: [1, 5]},
+    {lines: [6]},
+    // Redux - Action
+    {range: [8, 13]},
+    {range: [9, 12]},
+    {lines: [11]},
+    {lines: [13]},
+    // Redux - Selector
+    {range: [15, 25]},
+    {range: [15, 19]},
+    {lines: [17]},
+    {range: [20, 24]},
+    // View
+    {range: [25, 32]},
+    {range: [25, 28]},
+    {range: [29, 32]},
+  ]}
+/>
 
 ---
 
-Some things still can't be typed
+# Some More Cool Dropbox Stuff
 
 ---
 
-# Generics
+<CodeSurfer
+  title="Lodash"
+  code={require('!raw-loader!./snippets/lodash.ts').default}
+  lang="javascript"
+  showNumbers={false}
+  dark={true}
+  steps={[
+    {}
+  ]} />
+<Notes>We have a custom lodash build and we use types to enforce what functions can/can't be called</Notes>
 
 ---
 
----
-
-- Scaling an engineering organization
-  - Building contracts with Types
-  - Allow 200+ engineers to play in the same codebase
-  - Learning Curve
-    - Reading the errors
-    - Reexamining JavaScript idiosyncrasies
-- Integrating With React
-  - Function Components
-  - HOCs
-  - Redux
-  - Dynamic Types/Type Guards
-- Tradeoffs and Gotchas
-  - tests can get ugly quickly
-  - too many optional props
-  - Not linting for any
-- Show off what refactoring looks like
-
-# Matthew's Law: For any amount of hype on the internet there will be an equal amount of anti-hype.
+# React Upgrades
 
 ---
+
+# Problem: we want to test new React Versions in production but we shouldn't allow access to new features.
+
+---
+
+# Solution
+
+<AppearList>
+  <li>Slowly roll out the new version of React behind a feature gate</li>
+  <li>Upgrade the React Types to allow access to new features</li>
+</AppearList>
+
+<Notes>
+  For example. when upgrading from 16.7 to 16.8 we'll get a typeerror if an engineer uses hooks before we're ready to allow them
+</Notes>
+---
+
+# All of our library upgrades look like this
+
+<Notes>
+  We heavily leverage library types to go from one version to another
+</Notes>
+
+---
+
+# Let's Walk Through Some Cool Types
+
+---
+
+<CodeSurfer
+  title="Function Components"
+  code={require('!raw-loader!./snippets/function-component.js').default}
+  lang="javascript"
+  showNumbers={false}
+  dark={true}
+  steps={[{}]}
+/>
+
+---
+
+<CodeSurfer
+  title="Function Components"
+  code={require('!raw-loader!./snippets/function-component.tsx').default}
+  lang="javascript"
+  showNumbers={false}
+  dark={true}
+  steps={[{}, {range: [15, 20]}]}
+/>
+
+---
+
+<CodeSurfer
+  title="Render Props"
+  code={require('!raw-loader!./snippets/render-prop.js').default}
+  lang="javascript"
+  showNumbers={false}
+  dark={true}
+  steps={[{}]}
+/>
+
+---
+
+<CodeSurfer
+  title="Render Props"
+  code={require('!raw-loader!./snippets/render-prop.tsx').default}
+  lang="javascript"
+  showNumbers={false}
+  dark={true}
+  steps={[{}]}
+/>
+
+---
+
+<CodeSurfer
+  title="HOCs"
+  code={require('!raw-loader!./snippets/hoc.js').default}
+  lang="javascript"
+  showNumbers={false}
+  dark={true}
+  steps={[{}]}
+/>
+
+---
+
+<CodeSurfer
+  title="HOCs"
+  code={require('!raw-loader!./snippets/hoc.tsx').default}
+  lang="javascript"
+  showNumbers={false}
+  dark={true}
+  steps={[{}]}
+/>
 
 https://en.wikipedia.org/wiki/Data_type
+https://blogs.dropbox.com/tech/2018/09/migrating-from-underscore-to-lodash/
 https://twitter.com/MatthewGerstman/status/1087928519592722432?s=20
 https://news.ycombinator.com/item?id=18975373
-
----
-
-hn-1
-hn-2
-hn-3
-
----
