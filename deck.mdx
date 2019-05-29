@@ -188,16 +188,14 @@ import {NotesList} from './src/notes-list';
 />
 
 ---
-
 <CodeSurfer
   title="Function Components"
   code={require('!raw-loader!./snippets/function-component.tsx').default}
   lang="javascript"
   showNumbers={false}
   dark={true}
-  steps={[{}, {range: [15, 20]}]}
+  steps={[{range: [0, 14]}, {range: [10, 14]}]}
 />
-
 ---
 
 <CodeSurfer
@@ -265,8 +263,8 @@ import {NotesList} from './src/notes-list';
 # Dropbox Scale
 
 <AppearList>
-  <li>👩‍💻 200+ engineers working on the same codebase</li>
-  <li>📚 2 Million lines of Typescript</li>
+  <li>👩‍💻 Hundreds of engineers working on the same codebase</li>
+  <li>📚 Millions of lines of Typescript</li>
   <li>📘 Hundreds of Features</li>
   <li>🌎 NY, SEA, SF, TLV</li>
 </AppearList>
@@ -384,7 +382,7 @@ import {NotesList} from './src/notes-list';
 
 ---
 
-# Problem: we want to test new React Versions in production but we shouldn't allow access to new features.
+<h2>Problem: we want to test new React Versions in production but we shouldn't allow access to new features.</h2>
 
 ---
 
@@ -444,10 +442,13 @@ import {NotesList} from './src/notes-list';
       },
     },
     // ProperlyTypedParent
-    {range: [10, 15]},
+    {range: [10, 13]},
     {tokens: {10: [4, 5, 6, 7, 8, 9]}},
     {tokens: {10: [4, 5, 6, 7, 9]}},
     {tokens: {10: [8]}},
+    {range: [15, 17]},
+    {range: [18, 22]},
+    {tokens: {10: [4, 5, 6, 7, 8, 9]}},
   ]}
 />
 
@@ -459,7 +460,14 @@ import {NotesList} from './src/notes-list';
   lang="javascript"
   showNumbers={false}
   dark={true}
-  steps={[{}]}
+  steps={[{},
+    // Component Declaration
+    {lines: [3]},
+    {range: [4,10]},
+    {range: [12,17]},
+    {tokens: {13: [3, 4, 5, 6, 7]}},
+    {range: [13,16]}
+  ]}
 />
 
 ---
@@ -470,7 +478,26 @@ import {NotesList} from './src/notes-list';
   lang="javascript"
   showNumbers={false}
   dark={true}
-  steps={[{}]}
+  steps={[
+    {},
+    // Body
+    {range: [15, 21]},
+    {range: [23, 28]},
+    // Signature
+    {range: [11, 14]},
+    // Generic
+    {tokens: {11: [9, 10, 11, 12], 14: [1]},lines: [12, 13]},
+    // State
+    {lines: [13]},
+    {lines: [9]},
+    {lines: [15]},
+    // Props
+    {lines: [12]},
+    {range: [3, 8]},
+    {range: [4, 7]},
+    {range: [24, 27]},
+    {},
+  ]}
 />
 
 ---
@@ -481,7 +508,13 @@ import {NotesList} from './src/notes-list';
   lang="javascript"
   showNumbers={false}
   dark={true}
-  steps={[{}]}
+  steps={[
+    {},
+    {lines: [3]},
+    {lines: [4]},
+    {range: [6, 12]},
+    {range: [14, 22]},
+  ]}
 />
 
 ---

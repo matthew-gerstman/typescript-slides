@@ -13,6 +13,7 @@ export class HorcruxCounter extends React.Component<
   HorcruxCounterState
 > {
   state = {numHorcruxes: 0};
+
   incrementHorcruxes = () => {
     this.setState({
       numHorcruxes: this.state.numHorcruxes + 1
