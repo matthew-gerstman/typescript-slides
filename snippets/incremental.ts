@@ -1,5 +1,8 @@
 const muggle = "Vernon Dursley";
-muggle.toString();
+const vernonYelling = muggle.toLocaleUpperCase();
 
-type Wizard = {house: string};
-const wizard: Wizard = {house: "slytherin"};
+type Wizard = {
+  name: string;
+};
+const wizard: Wizard = {};
+wizard.name = "Harry Potter";

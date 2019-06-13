@@ -170,25 +170,62 @@ import {NotesList} from './src/notes-list';
   <li>Slytherins</li>
   <li>Autocomplete</li>
   <li>Object issues</li>
+  <li>Slytherins hard to read error message</li>
 </NotesList>
 
 ---
 
 # TypeScript is going to get in your way for the first few months
 
----
-# You're going to need to learn advanced TypeScript features faster than you realize
 
 ---
-<ul>
+
+# lodash.get/set
+<Notes>
+  Theres virtually no way to make this typesafe.
+</Notes>
+
+---
+
+# Tests require very well mocked data or lots of anys
+
+---
+
+# Advanced JavaScript translates to advanced TypeScript
+
+---
+
+# Higher Order Components
+
+---
+
+<TallImage src="assets/hoc.svg" />
+
+---
+
+<TallImage src="assets/inner-component.svg" />
+
+---
+# This is hard to type
+
+<AppearList>
   <li>Generics</li>
   <li>Intersections</li>
   <li>Discriminated Unions</li>
-</ul>
+</AppearList>
 
 ---
 
 <TallImage src="/assets/confused.gif" />
+
+---
+
+# Blogpost:
+# <a href="http://bit.ly/ts-hoc">bit.ly/ts-hoc</a>
+
+<Notes>
+It took me two weeks in 2017 to figure out how to type this.
+</Notes>
 
 ---
 
@@ -206,6 +243,15 @@ import {NotesList} from './src/notes-list';
     {},
   ]}
 />
+
+---
+
+# It's another build tool!
+<NotesList>
+  <li>This is another thing you have to learn to config</li>
+  <li>This is another thing you have to maintain</li>
+  <li>This is another thing you have to upgrade</li>
+</NotesList>
 
 ---
 
@@ -387,6 +433,9 @@ All of this is great, but what about small teams.
     {range: [22, 29]},
     {range: [22, 25]},
     {range: [26, 29]},
+    // Return to types
+    {range: [1, 5]},
+    {lines: [20]},
   ]}
 />
 
@@ -408,9 +457,16 @@ All of this is great, but what about small teams.
 
 ---
 
+# TypeScript is not a silver bullet!
+<AppearList>
+  <li>You still need to write tests</li>
+  <li>You still need to review code</li>
+  <li>You still need to think about architecture</li>
+</AppearList>
+
+---
 
 # Unlike tests, typescript gets in your way
-
 
 ---
 
@@ -422,6 +478,10 @@ All of this is great, but what about small teams.
 
 ---
 
+# The cost of TypeScript is learning it.
+
+---
+
 References
 
 <ul>
@@ -429,6 +489,7 @@ References
   <li>https://blogs.dropbox.com/tech/2018/09/migrating-from-underscore-to-lodash/</li>
   <li>https://twitter.com/MatthewGerstman/status/1087928519592722432?s=20</li>
   <li>https://news.ycombinator.com/item?id=18975373</li>
+  <li>https://medium.com/javascript-scene/the-typescript-tax-132ff4cb175b</li>
 </ul>
 
 ---
