@@ -59,11 +59,14 @@ import {NotesList} from './src/notes-list';
 
 # Today We're Going To Get Past The Hype
 
-<AppearList>
-  <li>What is TypeScript?</li>
-  <li>What are the wins?</li>
-  <li>I'm gonna show you some super cool types.</li>
-</AppearList>
+---
+
+# We're gonna go into the ugly parts, and then talk about why it's worth it anyway.
+
+<NotesList>
+  <li>I like to show the bad, and then show the good</li>
+  <li>Dropbox is using TypeScript at scale</li>
+</NotesList>
 
 ---
 
@@ -87,12 +90,11 @@ import {NotesList} from './src/notes-list';
   <li>string</li>
   <li>array</li>
   <li>object</li>
-  <li>enum</li>
 </AppearList>
 
 ---
 
-# Less Basic Types
+# Falsey Types
 
 <AppearList>
   <li>null</li>
@@ -104,8 +106,6 @@ import {NotesList} from './src/notes-list';
 ---
 
 # Types can also be derived from other types
-
-<Appear>But we'll come back to that</Appear>
 
 ---
 
@@ -126,7 +126,12 @@ import {NotesList} from './src/notes-list';
   lang="typescript"
   showNumbers={true}
   dark={true}
-  steps={[{}, {tokens: {1: [2, 3, 4, 5], 2: [3, 4, 5], 4: [6, 7, 8]}}]}
+  steps={[
+    {},
+    {tokens: {1: [2, 3, 4, 5], 2: [3, 4, 5], 4: [6, 7, 8]}},
+    {lines: [1, 8]},
+    {lines: [2, 9]},
+  ]}
 />
 
 ---
@@ -143,7 +148,13 @@ import {NotesList} from './src/notes-list';
   steps={[
     {},
     {
-      tokens: {2: [0], 3: [8], 6: [0], 7: [8], 10: [0], 11: [8]},
+      tokens: {3: [6], 7: [6], 11: [6]  }
+    },
+    {
+      tokens: {3: [8], 7: [8], 11: [8]},
+    },
+    {
+      tokens: {2: [0], 6: [0], 10: [0]},
     },
   ]}
 />
@@ -154,105 +165,47 @@ import {NotesList} from './src/notes-list';
 
 ---
 
-<TallImage src="assets/refactor.gif" />
+# Demo: VSCode + Typescript
+<NotesList>
+  <li>Slytherins</li>
+  <li>Autocomplete</li>
+  <li>Object issues</li>
+</NotesList>
 
 ---
 
-## It's _theoretically_ incremental, and opt in.
+# TypeScript is going to get in your way for the first few months
 
 ---
-
-<TallImage src="assets/incremental2.gif" />
-
----
-
-<TallImage src="assets/theoretically.gif" />
-
----
-
 # You're going to need to learn advanced TypeScript features faster than you realize
 
 ---
-
-# React Makes This Even Worse
-
----
-
-<CodeSurfer
-  title="Function Components"
-  code={require('!raw-loader!./snippets/function-component.js').default}
-  lang="javascript"
-  showNumbers={false}
-  dark={true}
-  steps={[{}]}
-/>
-
----
-<CodeSurfer
-  title="Function Components"
-  code={require('!raw-loader!./snippets/function-component.tsx').default}
-  lang="javascript"
-  showNumbers={false}
-  dark={true}
-  steps={[{range: [0, 14]}, {range: [10, 14]}]}
-/>
----
-
-<CodeSurfer
-  title="Render Props"
-  code={require('!raw-loader!./snippets/render-prop.js').default}
-  lang="javascript"
-  showNumbers={false}
-  dark={true}
-  steps={[{}]}
-/>
+<ul>
+  <li>Generics</li>
+  <li>Intersections</li>
+  <li>Discriminated Unions</li>
+</ul>
 
 ---
 
-<CodeSurfer
-  title="Render Props"
-  code={require('!raw-loader!./snippets/render-prop.tsx').default}
-  lang="javascript"
-  showNumbers={false}
-  dark={true}
-  steps={[{}]}
-/>
-
----
-
-<CodeSurfer
-  title="HOCs"
-  code={require('!raw-loader!./snippets/hoc.js').default}
-  lang="javascript"
-  showNumbers={false}
-  dark={true}
-  steps={[{}]}
-/>
-
----
-
-<CodeSurfer
-  title="HOCs"
-  code={require('!raw-loader!./snippets/hoc.tsx').default}
-  lang="javascript"
-  showNumbers={false}
-  dark={true}
-  steps={[{}]}
-/>
-
----
-
-# Writing Tests
-
-<img src="assets/tests.png" />
-
----
-
-# You either need robust mock data, lots of anys, or you're going to be updating types a lot.
+<TallImage src="/assets/confused.gif" />
 
 ---
 
 # We're bolting on types to an untyped language
+
+---
+
+<CodeSurfer
+  code={require('!raw-loader!./snippets/valid.js').default}
+  lang="typescript"
+  showNumbers={false}
+  dark={true}
+  title="Valid JavaScript"
+  steps={[
+    {},
+  ]}
+/>
 
 ---
 
@@ -275,6 +228,84 @@ import {NotesList} from './src/notes-list';
 
 ---
 
+# Library Upgrades
+
+---
+
+# TypeScript catches the vast majority of breakages when upgrading a library.
+
+---
+
+# Examples
+<AppearList>
+  <li>Deprecated features</li>
+  <li>Changed types</li>
+  <li>The types often just get better</li>
+</AppearList>
+
+---
+
+# At our scale I don't know how we would upgrade libraries without TypeScript
+<Notes>
+  MILLIONS of lines
+</Notes>
+---
+
+# TypeScript allows us to place constraints on engineers.
+
+---
+
+# Problem
+
+---
+
+# We want to test React 16.8 in production.
+
+---
+
+# Developers will start using hooks as soon as we let them.
+---
+
+<TallImage src="assets/stampede.gif" />
+
+---
+
+# Solution
+
+---
+
+# Roll out React 16.8 behind a feature gate.
+
+---
+
+# Without upgrading the React Types, developers can't use the feature.
+
+---
+
+# When we're confident it works, add the types.
+
+
+---
+
+<CodeSurfer
+  title="Restrict Lodash Usage"
+  code={require('!raw-loader!./snippets/lodash.ts').default}
+  lang="javascript"
+  showNumbers={false}
+  dark={true}
+  steps={[
+    {}
+  ]} />
+<Notes>We have a custom lodash build and we use types to enforce what functions can/can't be called</Notes>
+
+---
+
+# What about for small teams?
+<Notes>
+All of this is great, but what about small teams.
+</Notes>
+---
+
 # Free Documentation
 
 ---
@@ -293,7 +324,7 @@ import {NotesList} from './src/notes-list';
 
 # Contract Validation
 
-<img src="assets/contracts.svg" />
+<img src="assets/contracts.svg" style={{width: '90vw'}} />
 
 ---
 
@@ -361,178 +392,49 @@ import {NotesList} from './src/notes-list';
 
 ---
 
-# Some More Cool Dropbox Stuff
+# TypeScript increases in value over time
 
 ---
 
-<CodeSurfer
-  title="Lodash"
-  code={require('!raw-loader!./snippets/lodash.ts').default}
-  lang="javascript"
-  showNumbers={false}
-  dark={true}
-  steps={[
-    {}
-  ]} />
-<Notes>We have a custom lodash build and we use types to enforce what functions can/can't be called</Notes>
+<TallImage src="/assets/loc-time.png" />
 
 ---
 
-# React Upgrades
-
----
-
-<h2>Problem: we want to test new React Versions in production but we shouldn't allow access to new features.</h2>
-
----
-
-# Solution
-
-<AppearList>
-  <li>Slowly roll out the new version of React behind a feature gate</li>
-  <li>Upgrade the React Types to allow access to new features</li>
-</AppearList>
-
+<img src="assets/no-contract.svg" style={{width: '90vw'}} />
 <Notes>
-  For example. when upgrading from 16.7 to 16.8 we'll get a typeerror if an engineer uses hooks before we're ready to allow them
-</Notes>
----
-
-# All of our library upgrades look like this
-
-<Notes>
-  We heavily leverage library types to go from one version to another
+<li>Remember all the parts of your system</li>
+<li>Maybe your test coverage doesnt catch this</li>
 </Notes>
 
 ---
 
-# Let's Walk Through Some Cool Types
+
+# Unlike tests, typescript gets in your way
+
 
 ---
 
-<CodeSurfer
-  title="Function Components"
-  code={require('!raw-loader!./snippets/function-component.js').default}
-  lang="javascript"
-  showNumbers={false}
-  dark={true}
-  steps={[{}]}
-/>
+# The metric for success on a codebase is how many things you need to remember at once.
 
 ---
 
-<CodeSurfer
-  title="Function Components"
-  code={require('!raw-loader!./snippets/function-component.tsx').default}
-  lang="javascript"
-  showNumbers={false}
-  dark={true}
-  steps={[
-    {},
-    // Parent
-    {range: [3, 7]},
-    {
-      // type Props
-      lines: [3],
-      tokens: {
-        // props: Props
-        5: [5, 6, 7],
-        // {children} = props
-        6: [6, 10],
-      },
-    },
-    // ProperlyTypedParent
-    {range: [10, 13]},
-    {tokens: {10: [4, 5, 6, 7, 8, 9]}},
-    {tokens: {10: [4, 5, 6, 7, 9]}},
-    {tokens: {10: [8]}},
-    {range: [15, 17]},
-    {range: [18, 22]},
-    {tokens: {10: [4, 5, 6, 7, 8, 9]}},
-  ]}
-/>
-
----
-
-<CodeSurfer
-  title="Render Props"
-  code={require('!raw-loader!./snippets/render-prop.js').default}
-  lang="javascript"
-  showNumbers={false}
-  dark={true}
-  steps={[{},
-    // Component Declaration
-    {lines: [3]},
-    {range: [4,10]},
-    {range: [12,17]},
-    {tokens: {13: [3, 4, 5, 6, 7]}},
-    {range: [13,16]}
-  ]}
-/>
-
----
-
-<CodeSurfer
-  title="Render Props"
-  code={require('!raw-loader!./snippets/render-prop.tsx').default}
-  lang="javascript"
-  showNumbers={false}
-  dark={true}
-  steps={[
-    {},
-    // Body
-    {range: [15, 21]},
-    {range: [23, 28]},
-    // Signature
-    {range: [11, 14]},
-    // Generic
-    {tokens: {11: [9, 10, 11, 12], 14: [1]},lines: [12, 13]},
-    // State
-    {lines: [13]},
-    {lines: [9]},
-    {lines: [15]},
-    // Props
-    {lines: [12]},
-    {range: [3, 8]},
-    {range: [4, 7]},
-    {range: [24, 27]},
-    {},
-  ]}
-/>
-
----
-
-<CodeSurfer
-  title="HOCs"
-  code={require('!raw-loader!./snippets/hoc.js').default}
-  lang="javascript"
-  showNumbers={false}
-  dark={true}
-  steps={[
-    {},
-    {lines: [3]},
-    {lines: [4]},
-    {range: [6, 12]},
-    {range: [14, 22]},
-  ]}
-/>
-
----
-
-<CodeSurfer
-  title="HOCs"
-  code={require('!raw-loader!./snippets/hoc.tsx').default}
-  lang="javascript"
-  showNumbers={false}
-  dark={true}
-  steps={[{}]}
-/>
+# TypeScript allows you to forget about other parts of your codebase
 
 ---
 
 References
 
-https://en.wikipedia.org/wiki/Data_type
-https://blogs.dropbox.com/tech/2018/09/migrating-from-underscore-to-lodash/
-https://twitter.com/MatthewGerstman/status/1087928519592722432?s=20
-https://news.ycombinator.com/item?id=18975373
+<ul>
+  <li>https://en.wikipedia.org/wiki/Data_type</li>
+  <li>https://blogs.dropbox.com/tech/2018/09/migrating-from-underscore-to-lodash/</li>
+  <li>https://twitter.com/MatthewGerstman/status/1087928519592722432?s=20</li>
+  <li>https://news.ycombinator.com/item?id=18975373</li>
+</ul>
+
+---
+
+# Thank You!
+
+---
+
+<AboutMe />
