@@ -61,6 +61,8 @@ import {NotesList} from './src/notes-list';
 
 ---
 
+<TwitterTweetEmbed tweetId="1130516465520500736" />
+---
 # We're gonna go into the ugly parts, and then talk about why it's worth it anyway.
 
 <NotesList>
@@ -241,6 +243,11 @@ It took me two weeks in 2017 to figure out how to type this.
   title="Valid JavaScript"
   steps={[
     {},
+    {range: [2,4]},
+    {range: [6,8]},
+    {range: [10,12]},
+    {lines: [14]},
+    {},
   ]}
 />
 
@@ -275,6 +282,10 @@ It took me two weeks in 2017 to figure out how to type this.
 ---
 
 # Library Upgrades
+
+---
+
+# The first thing we do when upgrading a library is swap out the types.
 
 ---
 
@@ -332,17 +343,18 @@ It took me two weeks in 2017 to figure out how to type this.
 
 
 ---
-
 <CodeSurfer
   title="Restrict Lodash Usage"
   code={require('!raw-loader!./snippets/lodash.ts').default}
   lang="javascript"
   showNumbers={false}
   dark={true}
-  steps={[
-    {}
-  ]} />
+/>
 <Notes>We have a custom lodash build and we use types to enforce what functions can/can't be called</Notes>
+---
+
+# Blogpost:
+# bit.ly/db-lodash
 
 ---
 
@@ -374,9 +386,11 @@ All of this is great, but what about small teams.
 
 ---
 
-# Contract
+# A Contract is precise and verifiable interface specifications for software components.
 
-<Notes>Contract definition</Notes>
+<Notes>
+most important part is verifiable
+</Notes>
 
 ---
 
@@ -457,6 +471,10 @@ All of this is great, but what about small teams.
 
 ---
 
+# Unlike tests, typescript gets in your way
+
+---
+
 # TypeScript is not a silver bullet!
 <AppearList>
   <li>You still need to write tests</li>
@@ -464,13 +482,10 @@ All of this is great, but what about small teams.
   <li>You still need to think about architecture</li>
 </AppearList>
 
----
-
-# Unlike tests, typescript gets in your way
 
 ---
 
-# The metric for success on a codebase is how many things you need to remember at once.
+# The metric for success on a codebase is how few things you need to keep in your head at a time.
 
 ---
 
@@ -490,6 +505,7 @@ References
   <li>https://twitter.com/MatthewGerstman/status/1087928519592722432?s=20</li>
   <li>https://news.ycombinator.com/item?id=18975373</li>
   <li>https://medium.com/javascript-scene/the-typescript-tax-132ff4cb175b</li>
+  <li>https://en.wikipedia.org/wiki/Design_by_contract</li>
 </ul>
 
 ---
