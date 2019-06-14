@@ -20,7 +20,7 @@ const Slytherin: React.FunctionComponent<SlytherinProps> = ({
 const AllSlytherins: React.SFC<{}> = () => (
   <>
     <Slytherin name="Taylor Swift" age={29} points={100} />
-    <Slytherin name="Lin Manuel" age={39} points={100} />
+    <Slytherin name="Lin Manuel Miranda" age={39} points={100} />
     <Slytherin name="Merlin" age={500} points={100} />
   </>
 );
