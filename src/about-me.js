@@ -36,15 +36,11 @@ export default function AboutMe() {
         </CenteredLi>
         <CenteredLi>
           <EmojiWrapper size="40px" marginRight="30px">
-            📒
-          </EmojiWrapper>
-          <a href="https://www.matthewgerstman.com">matthewgerstman.com</a>
-        </CenteredLi>
-        <CenteredLi>
-          <EmojiWrapper size="40px" marginRight="30px">
             📊
           </EmojiWrapper>
-          <a href="https://typescript.matthewgerstman.com">typescript.matthewgerstman.com</a>
+          <a href="https://typescript.matthewgerstman.com">
+            typescript.matthewgerstman.com
+          </a>
         </CenteredLi>
       </ul>
     </React.Fragment>
