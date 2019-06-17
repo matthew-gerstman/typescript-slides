@@ -97,7 +97,7 @@ import {NotesList} from './src/notes-list';
 
 ---
 
-# Falsey Types
+# Falsy Types
 
 <AppearList>
   <li>null</li>
@@ -252,6 +252,9 @@ TypeScript’s type system allows certain operations that can’t be known at co
 ---
 
 <TallImage src="/assets/context-types.svg" />
+<Notes>
+We can peg a type to each component but there's no way to garauntee that they're actually compatible.
+</Notes>
 
 ---
 
@@ -412,12 +415,15 @@ TypeScript’s type system allows certain operations that can’t be known at co
 
 ---
 
-# Without upgrading the React Types, developers can't use the feature.
+# Keep 16.7 React Types.
 
 ---
 
 # When we're confident it works, add the types.
-
+<NotesList>
+  <li>Code changes so rapidly at Dropbox we have to garauntee a rollback is possible.</li>
+  <li>The reason we do this is so we can make rollbacks easy.</li>
+</NotesList>
 
 ---
 <CodeSurfer
