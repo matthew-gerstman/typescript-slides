@@ -6,6 +6,7 @@ import TallImage from './src/tall-image';
 import {TwitterTweetEmbed} from 'react-twitter-embed';
 import {AppearList} from './src/appear-list';
 import {NotesList} from './src/notes-list';
+import Emoji, {EmojiWrapper} from './src/emoji';
 
 # TypeScript: Seeing Past The Hype
 
@@ -64,6 +65,15 @@ import {NotesList} from './src/notes-list';
 # Today We're Going To Get Past The Hype
 
 ---
+
+<TallImage src="assets/hype.gif" />
+
+---
+
+<TallImage src="assets/thoughtful.gif" />
+
+---
+
 # We're gonna go into the ugly parts, and then talk about why it's worth it anyway.
 
 <NotesList>
@@ -88,11 +98,21 @@ import {NotesList} from './src/notes-list';
 # Basic Types
 
 <AppearList>
-  <li>boolean</li>
-  <li>number</li>
-  <li>string</li>
-  <li>array</li>
-  <li>object</li>
+  <li>
+    <Emoji name="typescript.jpg" /> boolean
+  </li>
+  <li>
+    <Emoji name="typescript.jpg" /> number
+  </li>
+  <li>
+    <Emoji name="typescript.jpg" /> string
+  </li>
+  <li>
+    <Emoji name="typescript.jpg" /> array
+  </li>
+  <li>
+    <Emoji name="typescript.jpg" /> object
+  </li>
 </AppearList>
 
 ---
@@ -100,10 +120,18 @@ import {NotesList} from './src/notes-list';
 # Falsy Types
 
 <AppearList>
-  <li>null</li>
-  <li>undefined</li>
-  <li>never</li>
-  <li>void</li>
+  <li>
+    <EmojiWrapper>❌</EmojiWrapper> null
+  </li>
+  <li>
+    <EmojiWrapper>❌</EmojiWrapper> undefined
+  </li>
+  <li>
+    <EmojiWrapper>❌</EmojiWrapper> never
+  </li>
+  <li>
+    <EmojiWrapper>❌</EmojiWrapper> void
+  </li>
 </AppearList>
 
 ---
@@ -113,6 +141,10 @@ import {NotesList} from './src/notes-list';
 ---
 
 # Any
+
+---
+
+<TallImage src="assets/trust-me.gif" />
 
 ---
 
@@ -132,6 +164,8 @@ import {NotesList} from './src/notes-list';
   steps={[
     {},
     {tokens: {1: [2, 3, 4, 5], 2: [3, 4, 5], 4: [6, 7, 8]}},
+    {range: [4, 6]},
+    {tokens: {4: [5, 6, 7, 8]}},
     {lines: [1, 8]},
     {lines: [2, 9]},
   ]}
@@ -151,7 +185,7 @@ import {NotesList} from './src/notes-list';
   steps={[
     {},
     {
-      tokens: {3: [6], 7: [6], 11: [6]  }
+      tokens: {3: [6], 7: [6], 11: [6]},
     },
     {
       tokens: {3: [8], 7: [8], 11: [8]},
@@ -169,6 +203,7 @@ import {NotesList} from './src/notes-list';
 ---
 
 # Demo: VSCode + Typescript
+
 <NotesList>
   <li>Slytherins</li>
   <li>Autocomplete</li>
@@ -180,13 +215,11 @@ import {NotesList} from './src/notes-list';
 
 # TypeScript is going to get in your way for the first few months
 
-
 ---
 
 # lodash.get/set
-<Notes>
-  Theres virtually no way to make this typesafe.
-</Notes>
+
+<Notes>Theres virtually no way to make this typesafe.</Notes>
 
 ---
 
@@ -209,12 +242,19 @@ import {NotesList} from './src/notes-list';
 <TallImage src="assets/inner-component.svg" />
 
 ---
+
 # This is hard to type
 
 <AppearList>
-  <li>Generics</li>
-  <li>Intersections</li>
-  <li>Discriminated Unions</li>
+  <li>
+    <Emoji name="typescript.jpg" /> Generics
+  </li>
+  <li>
+    <Emoji name="typescript.jpg" /> Intersections
+  </li>
+  <li>
+    <Emoji name="typescript.jpg" /> Discriminated Unions
+  </li>
 </AppearList>
 
 ---
@@ -224,22 +264,31 @@ import {NotesList} from './src/notes-list';
 ---
 
 # Blogpost:
+
 # <a href="http://bit.ly/ts-hoc">bit.ly/ts-hoc</a>
 
-<Notes>
-It took me two weeks in 2017 to figure out how to type this.
-</Notes>
+<Notes>It took me two weeks in 2017 to figure out how to type this.</Notes>
 
 ---
 
 # TypeScript is not Sound!
+
 <Notes>
-TypeScript’s type system allows certain operations that can’t be known at compile-time to be safe. When a type system has this property, it is said to not be “sound”.
+  TypeScript’s type system allows certain operations that can’t be known at
+  compile-time to be safe. When a type system has this property, it is said to
+  not be “sound”.
 </Notes>
 
 ---
 
-# Anyone can put an any in your codebase.
+# Anyone can put an <i>any</i> in your codebase.
+
+<Notes>
+  Remember how I said any means trust me?
+</Notes>
+---
+
+<TallImage src="assets/trust-me-bad.gif" />
 
 ---
 
@@ -290,22 +339,13 @@ We can peg a type to each component but there's no way to garauntee that they're
   title="Valid JavaScript"
   steps={[
     {},
-    {range: [2,4]},
-    {range: [6,8]},
-    {range: [10,12]},
+    {range: [2, 4]},
+    {range: [6, 8]},
+    {range: [10, 12]},
     {lines: [14]},
     {},
   ]}
 />
-
----
-
-# It's another build tool!
-<NotesList>
-  <li>This is another thing you have to learn to config</li>
-  <li>This is another thing you have to maintain</li>
-  <li>This is another thing you have to upgrade</li>
-</NotesList>
 
 ---
 
@@ -336,8 +376,8 @@ We can peg a type to each component but there's no way to garauntee that they're
 # Changing Interfaces
 
 <Notes>
-  You saw this before with the Slytherins
-  If someone adds a required prop to a component it'll catch it
+  You saw this before with the Slytherins If someone adds a required prop to a
+  component it'll catch it
 </Notes>
 
 ---
@@ -374,15 +414,23 @@ We can peg a type to each component but there's no way to garauntee that they're
 ---
 
 # Examples
+
 <AppearList>
-  <li>Deprecated features</li>
-  <li>Changed types</li>
-  <li>The types often just get better</li>
+  <li>
+    <EmojiWrapper>❌</EmojiWrapper> Deprecated features
+  </li>
+  <li>
+    <EmojiWrapper>🔄</EmojiWrapper> Changed types
+  </li>
+  <li>
+    <EmojiWrapper>✅</EmojiWrapper> The types often just get better
+  </li>
 </AppearList>
 
 ---
 
 # At our scale I don't know how we would upgrade libraries without TypeScript
+
 <Notes>
   MILLIONS of lines
 </Notes>
@@ -401,6 +449,7 @@ We can peg a type to each component but there's no way to garauntee that they're
 ---
 
 # Developers will start using hooks as soon as we let them.
+
 ---
 
 <TallImage src="assets/stampede.gif" />
@@ -420,12 +469,17 @@ We can peg a type to each component but there's no way to garauntee that they're
 ---
 
 # When we're confident it works, add the types.
+
 <NotesList>
-  <li>Code changes so rapidly at Dropbox we have to garauntee a rollback is possible.</li>
+  <li>
+    Code changes so rapidly at Dropbox we have to garauntee a rollback is
+    possible.
+  </li>
   <li>The reason we do this is so we can make rollbacks easy.</li>
 </NotesList>
 
 ---
+
 <CodeSurfer
   title="Restrict Lodash Usage"
   code={require('!raw-loader!./snippets/lodash.ts').default}
@@ -437,11 +491,13 @@ We can peg a type to each component but there's no way to garauntee that they're
 ---
 
 # Blogpost:
+
 # bit.ly/db-lodash
 
 ---
 
 # What about for small teams?
+
 <Notes>
 All of this is great, but what about small teams.
 </Notes>
@@ -469,11 +525,13 @@ All of this is great, but what about small teams.
 
 ---
 
-# A Contract is precise and verifiable interface specifications for software components.
+# A Contract is precise and verifiable interface for software components.
 
-<Notes>
-most important part is verifiable
-</Notes>
+<Notes>most important part is verifiable</Notes>
+
+---
+
+# Verifiable
 
 ---
 
@@ -559,12 +617,18 @@ most important part is verifiable
 ---
 
 # TypeScript is not a silver bullet!
-<AppearList>
-  <li>You still need to write tests</li>
-  <li>You still need to review code</li>
-  <li>You still need to think about architecture</li>
-</AppearList>
 
+<AppearList>
+  <li>
+    <EmojiWrapper>👩🏽‍🔬</EmojiWrapper> You still need to write tests
+  </li>
+  <li>
+    <EmojiWrapper>👩‍💻</EmojiWrapper> You still need to review code
+  </li>
+  <li>
+    <EmojiWrapper>👩🏾‍🏫</EmojiWrapper> You still need to think about architecture
+  </li>
+</AppearList>
 
 ---
 
@@ -580,18 +644,19 @@ most important part is verifiable
 
 ---
 
-References
+# References
 
-<ul>
-  <li>https://en.wikipedia.org/wiki/Data_type</li>
-  <li>https://blogs.dropbox.com/tech/2018/09/migrating-from-underscore-to-lodash/</li>
-  <li>https://twitter.com/MatthewGerstman/status/1087928519592722432?s=20</li>
-  <li>https://news.ycombinator.com/item?id=18975373</li>
-  <li>https://medium.com/javascript-scene/the-typescript-tax-132ff4cb175b</li>
-  <li>https://en.wikipedia.org/wiki/Design_by_contract</li>
-  <li>https://www.reddit.com/r/typescript/comments/aofcik/38_of_bugs_at_airbnb_could_have_been_prevented_by/</li>
-</ul>
-
+<div>
+  <ul style={{fontSize: 24}}>
+    <li><Emoji size="20px" name="typescript.jpg" /><a href="https://en.wikipedia.org/wiki/Data_type">https://en.wikipedia.org/wiki/Data_type</a></li>
+    <li>
+      <Emoji size="20px" name="typescript.jpg" /><a href="https://blogs.dropbox.com/tech/2018/09/migrating-from-underscore-to-lodash">https://blogs.dropbox.com/tech/2018/09/migrating-from-underscore-to-lodash/</a></li>
+    <li><Emoji size="20px" name="typescript.jpg" /><a href="https://twitter.com/MatthewGerstman/status/1087928519592722432?s=20">https://twitter.com/MatthewGerstman/status/1087928519592722432?s=20</a></li>
+    <li><Emoji size="20px" name="typescript.jpg" /><a href="https://news.ycombinator.com/item?id=18975373">https://news.ycombinator.com/item?id=18975373</a></li>
+    <li><Emoji size="20px" name="typescript.jpg" /><a href="https://medium.com/javascript-scene/the-typescript-tax-132ff4cb175b">https://medium.com/javascript-scene/the-typescript-tax-132ff4cb175b</a></li>
+    <li><Emoji size="20px" name="typescript.jpg" /><a href="https://en.wikipedia.org/wiki/Design_by_contract">https://en.wikipedia.org/wiki/Design_by_contract</a></li>
+  </ul>
+</div>
 ---
 
 # Thank You!
