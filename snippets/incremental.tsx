@@ -1,15 +1,25 @@
-import * as lodash from "lodash";
-
 const muggle = "Vernon Dursley";
-const yellingMuggle = muggle.toLocaleUpperCase();
+const yellingMuggle = muggle.toUpperCase();
+
 yellingMuggle.slice(0, 10);
 
-type Wizard = {
-  name: string;
-};
+type Wizard = {name: string};
+const wizard: Wizard = {};
+wizard.name = "Harry Potter";
 
-const wizard: Wizard = {name: "harry potter"};
+// import * as lodash from "lodash";
 
-lodash.debounce(() => "foo", 1000);
+// const muggle = "Vernon Dursley";
+// const yellingMuggle = muggle.toLocaleUpperCase();
+// yellingMuggle.slice(0, 10);
 
-lodash.filter([1, 3], val => val > 1);
+// type Wizard = {
+//   name: string;
+// };
+
+// const wizard: Wizard = {name: "harry potter"};
+
+// lodash.debounce(() => "foo", 1000);
+
+// lodash.filter([1, 3], val => val > 1);
+// //
