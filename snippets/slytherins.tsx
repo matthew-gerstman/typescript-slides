@@ -15,6 +15,6 @@ const AllSlytherins: React.SFC<{}> = () => (
   <>
     <Slytherin name="Taylor Swift" age={29} />
     <Slytherin name="Lin Manuel Miranda" age={39} />
-    <Slytherin name="Merlin" age={500} />
+    <Slytherin name="Severus Snape" age={38} />
   </>
 );
