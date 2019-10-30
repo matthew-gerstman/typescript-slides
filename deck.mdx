@@ -1,18 +1,50 @@
-export {default as theme} from './src/theme';
-import AboutMe from './src/about-me';
-import {Appear, Image, Notes} from 'mdx-deck';
-import {CodeSurfer} from 'mdx-deck-code-surfer';
-import TallImage from './src/tall-image';
-import {TwitterTweetEmbed} from 'react-twitter-embed';
-import {AppearList} from './src/appear-list';
-import {NotesList} from './src/notes-list';
-import Emoji, {EmojiWrapper} from './src/emoji';
+export { default as theme } from "./src/theme";
+import AboutMe from "./src/about-me";
+import { Appear, Image, Notes } from "mdx-deck";
+import { CodeSurfer } from "mdx-deck-code-surfer";
+import TallImage from "./src/tall-image";
+import { TwitterTweetEmbed } from "react-twitter-embed";
+import { AppearList } from "./src/appear-list";
+import { NotesList } from "./src/notes-list";
+import Emoji, { EmojiWrapper } from "./src/emoji";
 
 # TypeScript: Seeing Past The Hype
 
 ---
 
 <AboutMe />
+
+---
+
+<TallImage src="assets/me/love-taylor-swift.gif" />
+
+---
+
+<TallImage src="assets/me/taylor-swift-alone.gif" />
+
+---
+
+<TallImage src="assets/me/potter-puppet-pals.gif" />
+
+---
+
+<TallImage src="assets/me/potter-angst.gif" />
+
+---
+
+  <img height="500px" src="assets/me/buying-broadway.jpg" />
+
+  <div style={{fontSize: "3em"}}>
+    bit.ly/broadway-book
+  </div>
+
+---
+
+# Thank you for indulging me
+
+---
+
+# Typescript
 
 ---
 
@@ -38,23 +70,23 @@ import Emoji, {EmojiWrapper} from './src/emoji';
 
 <div
   style={{
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
     gridGap: 15,
-    alignItems: 'center',
+    alignItems: "center",
   }}
 >
-  <img style={{maxHeight: 600, maxWidth: 600}} src="assets/quora.png" />
-  <img style={{maxHeight: 600, maxWidth: 600}} src="assets/reddit.png" />
-  <img style={{maxHeight: 600, maxWidth: 600}} src="assets/medium.png" />
-  <img style={{maxHeight: 600, maxWidth: 600}} src="assets/dev-to.png" />
+  <img style={{ maxHeight: 600, maxWidth: 600 }} src="assets/quora.png" />
+  <img style={{ maxHeight: 600, maxWidth: 600 }} src="assets/reddit.png" />
+  <img style={{ maxHeight: 600, maxWidth: 600 }} src="assets/medium.png" />
+  <img style={{ maxHeight: 600, maxWidth: 600 }} src="assets/dev-to.png" />
 </div>
 
 ---
 
 ## Google Trend
 
-<img style={{width: '80vw'}} src="assets/trends.png" />
+<img style={{ width: "80vw" }} src="assets/trends.png" />
 
 ---
 
@@ -157,17 +189,17 @@ import Emoji, {EmojiWrapper} from './src/emoji';
 ---
 
 <CodeSurfer
-  code={require('!raw-loader!./snippets/what-is.ts').default}
+  code={require("!raw-loader!./snippets/what-is.ts").default}
   lang="typescript"
   showNumbers={true}
   dark={true}
   steps={[
     {},
-    {tokens: {1: [2, 3, 4, 5], 2: [3, 4, 5], 4: [6, 7, 8]}},
-    {range: [4, 6]},
-    {tokens: {4: [5, 6, 7, 8]}},
-    {lines: [1, 8]},
-    {lines: [2, 9]},
+    { tokens: { 1: [2, 3, 4, 5], 2: [3, 4, 5], 4: [6, 7, 8] } },
+    { range: [4, 6] },
+    { tokens: { 4: [5, 6, 7, 8] } },
+    { lines: [1, 8] },
+    { lines: [2, 9] },
   ]}
 />
 
@@ -178,20 +210,20 @@ import Emoji, {EmojiWrapper} from './src/emoji';
 ---
 
 <CodeSurfer
-  code={require('!raw-loader!./snippets/get-element.ts').default}
+  code={require("!raw-loader!./snippets/get-element.ts").default}
   lang="typescript"
   showNumbers={false}
   dark={true}
   steps={[
     {},
     {
-      tokens: {3: [6], 7: [6], 11: [6]},
+      tokens: { 3: [6], 7: [6], 11: [6] },
     },
     {
-      tokens: {3: [8], 7: [8], 11: [8]},
+      tokens: { 3: [8], 7: [8], 11: [8] },
     },
     {
-      tokens: {2: [0], 6: [0], 10: [0]},
+      tokens: { 2: [0], 6: [0], 10: [0] },
     },
   ]}
 />
@@ -265,7 +297,9 @@ import Emoji, {EmojiWrapper} from './src/emoji';
 
 # Blogpost:
 
-# <a href="http://bit.ly/ts-hoc">bit.ly/ts-hoc</a>
+<div style={{fontSize: "3em"}}>
+  bit.ly/ts-hoc
+</div>
 
 <Notes>It took me two weeks in 2017 to figure out how to type this.</Notes>
 
@@ -332,17 +366,17 @@ We can peg a type to each component but there's no way to garauntee that they're
 ---
 
 <CodeSurfer
-  code={require('!raw-loader!./snippets/valid.js').default}
+  code={require("!raw-loader!./snippets/valid.js").default}
   lang="typescript"
   showNumbers={false}
   dark={true}
   title="Valid JavaScript"
   steps={[
     {},
-    {range: [2, 4]},
-    {range: [6, 8]},
-    {range: [10, 12]},
-    {lines: [14]},
+    { range: [2, 4] },
+    { range: [6, 8] },
+    { range: [10, 12] },
+    { lines: [14] },
     {},
   ]}
 />
@@ -492,7 +526,9 @@ We can peg a type to each component but there's no way to garauntee that they're
 
 # Blogpost:
 
-# bit.ly/db-lodash
+<div style={{fontSize: "3em"}}>
+  bit.ly/db-lodash
+</div>
 
 ---
 
@@ -521,7 +557,7 @@ All of this is great, but what about small teams.
 
 # Contract Validation
 
-<img src="assets/contracts.svg" style={{width: '90vw'}} />
+<img src="assets/contracts.svg" style={{ width: "90vw" }} />
 
 ---
 
@@ -537,7 +573,7 @@ All of this is great, but what about small teams.
 
 # Api
 
-<img style={{height: '50vh'}} src="assets/api.svg" />
+<img style={{ height: "50vh" }} src="assets/api.svg" />
 
 <Notes>Types auto generated via stone</Notes>
 
@@ -545,7 +581,7 @@ All of this is great, but what about small teams.
 
 # Component Library
 
-<img style={{height: '50vh'}} src="assets/component-library.svg" />
+<img style={{ height: "50vh" }} src="assets/component-library.svg" />
 
 <Notes>
   Types generated at build time so when we upgrade Dropbox.com we already know
@@ -556,7 +592,7 @@ All of this is great, but what about small teams.
 
 # Feature
 
-<img style={{height: '50vh'}} src="assets/business-logic.svg" />
+<img style={{ height: "50vh" }} src="assets/business-logic.svg" />
 
 <Notes>In between, we can develop the feature on it's own</Notes>
 
@@ -564,33 +600,33 @@ All of this is great, but what about small teams.
 
 <CodeSurfer
   title="Sample App"
-  code={require('!raw-loader!./snippets/sample-app.tsx').default}
+  code={require("!raw-loader!./snippets/sample-app.tsx").default}
   lang="javascript"
   showNumbers={false}
   dark={true}
   steps={[
     {},
     // Api
-    {range: [0, 6]},
-    {range: [1, 5]},
-    {lines: [6]},
+    { range: [0, 6] },
+    { range: [1, 5] },
+    { lines: [6] },
     // Redux - Action
-    {range: [8, 13]},
-    {range: [9, 12]},
-    {lines: [11]},
-    {lines: [13]},
+    { range: [8, 13] },
+    { range: [9, 12] },
+    { lines: [11] },
+    { lines: [13] },
     // Redux - Selector
-    {range: [15, 25]},
-    {range: [15, 19]},
-    {lines: [17]},
-    {lines: [20]},
+    { range: [15, 25] },
+    { range: [15, 19] },
+    { lines: [17] },
+    { lines: [20] },
     // View
-    {range: [22, 29]},
-    {range: [22, 25]},
-    {range: [26, 29]},
+    { range: [22, 29] },
+    { range: [22, 25] },
+    { range: [26, 29] },
     // Return to types
-    {range: [1, 5]},
-    {lines: [20]},
+    { range: [1, 5] },
+    { lines: [20] },
   ]}
 />
 
